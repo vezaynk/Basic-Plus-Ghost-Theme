@@ -1,0 +1,41 @@
+<html>
+<head>
+  {{! Document Settings }}
+  <meta charset="utf-8" />
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{! Styles }}
+  <link href='http://fonts.googleapis.com/css?family=Raleway:600,700,400' rel='stylesheet' type='text/css'>
+  <link href="{{asset "styles.css"}}" rel="stylesheet" type="text/css" media="screen" />
+
+  {{! Bootstrap Stuff }}
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+</head>
+
+  <body>
+{{navigation}}
+
+<div id="container" class="container">
+{{{body}}}
+</div>
+
+{{! Ghost outputs important scripts and data with this tag }}
+{{ghost_foot}}
+<!-- I feel like I failed my programming career over here -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+{{! A handy script right here }}
+<script>
+$("a[href^='http://'], a[href^='https://']").click(function(){
+  $(this).attr("target","_blank");
+});
+$("a[href^='{{@blog.url}}']").click(function(){
+  $(this).attr("target","_self");
+});
+</script>
+</body>
+</html>

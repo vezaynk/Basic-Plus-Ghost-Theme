@@ -1,0 +1,17 @@
+html, body{
+	padding: 0;
+	margin: 0;
+}
+#container{
+	width: 750px;
+}
+.post{
+	width: 100%;
+}
+.post-image{
+	width: 100%;
+}
+#logo{
+	max-height: 50%;
+	max-width: 100%;
+}

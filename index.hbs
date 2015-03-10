@@ -1,0 +1,24 @@
+{{!< default}}
+
+        {{#foreach posts}}
+            <div class="post">
+                
+                <div class="post-title">
+                <a href="{{url}}"><h1>{{{title}}}</h1></a>
+                </div>
+
+                <a href="{{url}}"><img class="post-image" src="{{image}}"/></a>
+
+                <span>
+                Posted on {{date published_at format="DD-MM-YYYY"}} by {{#author}}<a href="{{url}}">{{name}}</a>{{/author}}
+                </span>
+
+                <p>{{excerpt words="100"}}...</p>
+
+            <a href="{{url}}">Read more</a>
+            </div>
+            <hr>
+        {{/foreach}}
+
+
+        {{pagination}}
