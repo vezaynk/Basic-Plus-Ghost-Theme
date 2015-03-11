@@ -15,3 +15,40 @@ html, body{
 	max-height: 50%;
 	max-width: 100%;
 }
+table
+{
+	border-collapse: collapse;
+	border-spacing: 0;
+	display: block;
+	font-family: "Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	overflow: auto;
+	width: 100%;
+	word-break: normal;
+}
+tr
+{
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+}
+th
+{
+	border: 1px solid #ddd;
+	font-weight: bold;
+	padding: 6px 13px !important;
+}
+td
+{
+	border: 1px solid #ddd;
+	padding: 6px 13px !important;
+}
+tr:nth-child(2n)
+{
+	background-color: #f8f8f8;
+}
+@media (max-width: 750px){
+	#container{
+		width: 100%;
+	}
+}

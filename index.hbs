@@ -1,7 +1,30 @@
 {{!< default}}
 
-        {{#foreach posts}}
-            <div class="post">
+{{#foreach posts}}
+{{#if featured}}
+<div class="post">
+                
+                <div class="post-title">
+                <a href="{{url}}"><h1>{{{title}}}</h1></a> <span class="label label-default">Featured</span>
+                </div>
+
+                <a href="{{url}}"><img class="post-image" src="{{image}}"/></a>
+
+                <p>
+                Posted on {{date published_at format="DD-MM-YYYY"}} by {{#author}}<a href="{{url}}">{{name}}</a>{{/author}}
+                </p>
+
+                <p>{{excerpt words="100"}}...</p>
+                <p>Posted in: {{tags}}</p>
+            <a href="{{url}}" class="btn btn-primary btn-lg">Read more</a>
+            </div>
+            <hr>
+{{/if}}
+{{/foreach}}
+
+{{#foreach posts}}
+{{#unless featured}}
+<div class="post">
                 
                 <div class="post-title">
                 <a href="{{url}}"><h1>{{{title}}}</h1></a>
@@ -9,16 +32,17 @@
 
                 <a href="{{url}}"><img class="post-image" src="{{image}}"/></a>
 
-                <span>
+                 <p>
                 Posted on {{date published_at format="DD-MM-YYYY"}} by {{#author}}<a href="{{url}}">{{name}}</a>{{/author}}
-                </span>
+                </p>
 
                 <p>{{excerpt words="100"}}...</p>
-
-            <a href="{{url}}">Read more</a>
+                <p>Posted in: {{tags}}</p>
+            <a href="{{url}}" class="btn btn-primary btn-lg">Read more</a>
             </div>
             <hr>
-        {{/foreach}}
+{{/unless}}
+{{/foreach}}
 
 
         {{pagination}}
