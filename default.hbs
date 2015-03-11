@@ -5,49 +5,48 @@
   <title>{{meta_title}}</title>
   <meta name="description" content="{{meta_description}}" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  {{! Styles }}
-  <link href='http://fonts.googleapis.com/css?family=Raleway:600,700,400' rel='stylesheet' type='text/css'>
-  <link href="{{asset "css/styles.css"}}" rel="stylesheet" type="text/css" media="screen" />
-
-  {{! Bootstrap Stuff }}
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
 </head>
+<body>
 
-  <body>
+  {{! Navigation Start}}
     <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{@blog.url}}">{{@blog.title}}</a>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{@blog.url}}">{{@blog.title}}</a>
+      </div>
+    {{navigation}}
+  {{! Navigation End}}
+  
+  {{! Main Contents Start}}
+    <div id="container" class="container">
+      {{{body}}}
     </div>
-{{navigation}}
+  {{! Main Contents End}}
 
-<div id="container" class="container">
-{{{body}}}
-</div>
+  {{! Scripts Start }}
+    {{ghost_foot}}
+    <script src="{{asset "js/bootstrap.js"}}"></script>
+    <script>
+      //This script opens all external links in new windows/tabs
+      $("a[href^='http://'], a[href^='https://']").click(function(){
+        $(this).attr("target","_blank");
+      });
+      $("a[href^='{{@blog.url}}']").click(function(){
+        $(this).attr("target","_self");
+      });
+    </script>
+  {{! Scripts End}}
 
-{{! Ghost outputs important scripts and data with this tag }}
-{{ghost_foot}}
-<!-- I feel like I failed my programming career over here -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
-{{! A handy script right here }}
-<script>
-$("a[href^='http://'], a[href^='https://']").click(function(){
-  $(this).attr("target","_blank");
-});
-$("a[href^='{{@blog.url}}']").click(function(){
-  $(this).attr("target","_self");
-});
-</script>
+  {{! Styles Start}}
+    <link href="{{asset "css/styles.css"}}" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{asset "css/bootstrap.css"}}">
+  {{! Styles End}}
+  
 </body>
 </html>
