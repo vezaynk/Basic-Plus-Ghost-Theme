@@ -63,3 +63,7 @@ tr:nth-child(2n)
 	-webkit-transition: all 0.1s ease-in-out 0s;
 	transition: all 0.2s ease-in-out 0s;
 }
+.ad{
+	width: 100%;
+	overflow: hidden;
+}
