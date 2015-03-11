@@ -1,5 +1,13 @@
-#Dev Ghost Theme
+#Basic+
 
-DGT is a basic pre-made kit to make ghost themes faster. It is easy to modify to suite any needs, you will only need to structure it a bit and add your CSS and bam! Finished!
+Basic+ is a bootstrap-based theme for ghost designed to *just work*. It uses a very simple and intuitive structure that both looks great and is flexible.
 
-##Coming Soon!
+##Features
+
+ - Supports the latest navigation system
+ - Fully responsive, plays well on all screen sizes
+ - Support for featured posts (as best as possible)
+ - Frequent updates and patches (As in, if you have a suggestion, ask - don't do it yourself because you will not be able to get updates)
+ - And all the other stuff you would expect from a great Ghost theme
+
+##In the works!
