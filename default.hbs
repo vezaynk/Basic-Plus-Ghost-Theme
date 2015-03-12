@@ -41,6 +41,10 @@
       $("a[href^='{{@blog.url}}']").click(function(){
         $(this).attr("target","_self");
       });
+      $('#search').submit(function() {
+        var txt = $('#searchbox');
+        txt.val(txt.val() + " site:{{@blog.url}}");
+      });
     </script>
   {{! Scripts End}}
 
