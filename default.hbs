@@ -34,8 +34,12 @@
 </head>
 <body>
 
+<div id="cover" style="background-image: url({{@blog.cover}});">
+  <a href="{{@blog.url}}"><img id="logo" src="{{@blog.logo}}" height="100%"></a>
+</div>
+
   {{! Navigation Start}}
-    <nav class="navbar navbar-default">
+    <nav id="navigation" class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -57,6 +61,7 @@
 
   {{! Scripts Start }}
     {{ghost_foot}}
+    <script src="{{asset "js/sticky.js"}}"></script>
     <script src="{{asset "js/bootstrap.js"}}"></script>
     <script>
       //This script opens all external links in new windows/tabs
