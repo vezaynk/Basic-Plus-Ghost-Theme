@@ -2,13 +2,13 @@
 
 {{#foreach posts}}
 {{#if featured}}
-<div class="post">
+<div class="post post-featured">
                 
-                <div class="post-title">
-                <a href="{{url}}"><h1>{{{title}}}</h1></a> <span class="label label-default">Featured</span>
+                <div class="post-title post-title-featured">
+                <a href="{{url}}"><h1>{{{title}}}</h1></a> <span class="featured label label-default">Featured</span>
                 </div>
 
-                <a href="{{url}}"><img class="post-image" src="{{image}}"/></a>
+                <a href="{{url}}"><img class="post-image post-image-featured" src="{{image}}"/></a>
 
                 <p>
                 Posted on {{date published_at format="DD-MM-YYYY"}} by {{#author}}<a href="{{url}}">{{name}}</a>{{/author}}
